@@ -1,0 +1,267 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+main {
+  max-width: 100%;
+  height: auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: hsl(270, 20%, 98%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+}
+main::before,
+main::after {
+  content: "";
+  width: 400px;
+  height: 90%;
+  position: absolute;
+}
+main::before {
+  background-image: linear-gradient(
+    to bottom,
+    hsl(293, 100%, 63%),
+    hsl(264, 100%, 61%)
+  );
+  border-radius: 0 0 200px 200px;
+  top: 0;
+  left: -60px;
+}
+main::after {
+  background-color: hsl(270, 20%, 96%);
+  border-radius: 200px 200px 0 0;
+  bottom: 0;
+  right: -100px;
+}
+@media (max-width: 450px) {
+  main::before {
+    left: -200px;
+    top: -30vh;
+  }
+  main::after {
+    right: -200px;
+    bottom: -30vh;
+  }
+}
+main .container,
+main .info {
+  position: relative;
+  z-index: 1;
+}
+main .container {
+  background-color: hsl(0, 0%, 100%);
+  width: 280px;
+  height: auto;
+  padding: 10px;
+  border-radius: 25px;
+  box-shadow: 10px 20px 40px hsl(206, 6%, 79%);
+}
+main .app {
+  width: 100%;
+  height: 100%;
+  background-color: hsl(270, 20%, 96%);
+  border-radius: 25px;
+  overflow: hidden;
+}
+main .app .head {
+  padding: 30px 20px 20px 30px;
+  background-image: linear-gradient(
+    to right,
+    hsl(264, 100%, 61%),
+    hsl(293, 100%, 63%)
+  );
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+main .app .head::before {
+  content: "";
+  width: 50%;
+  height: 30px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 25px;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+main .app .head i {
+  color: hsl(0, 0%, 100%);
+  font-size: 12px;
+}
+main .app .head .tag {
+  display: flex;
+  align-items: center;
+  font-family: "Rubik", sans-serif;
+  position: relative;
+}
+main .app .head .tag::before {
+  content: "\f053";
+  font-family: "Font Awesome 5 Free";
+  font-size: 14px;
+  font-weight: bold;
+  color: hsl(0, 0%, 100%);
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+}
+main .app .head .tag img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border: 1px solid hsl(0, 0%, 100%);
+  border-radius: 50%;
+}
+main .app .head .tag h2 {
+  margin-bottom: -5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: hsl(276, 100%, 81%);
+}
+main .app .head .tag span {
+  font-size: 10px;
+  color: hsl(276, 100%, 81%);
+}
+main .app .padding {
+  padding: 10px 10px;
+  font-family: "Rubik", sans-serif;
+}
+main .app .padding .gray {
+  width: 70%;
+  padding: 10px 20px 10px 10px;
+  margin-bottom: 10px;
+  border-radius: 12px 12px 12px 2px;
+  background-color: hsl(206, 6%, 88%);
+  color: hsl(276, 55%, 52%);
+  font-size: 10px;
+}
+main .app .padding .photos {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: left;
+  text-align: right;
+}
+main .app .padding .photos img {
+  width: 40px;
+  height: 40px;
+  margin-right: 5px;
+  border-radius: 10px;
+}
+main .app .padding .right {
+  width: 70%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  border-radius: 12px 12px 2px 12px;
+  background: hsl(0, 0%, 100%);
+  color: hsl(271, 15%, 43%);
+  font-size: 10px;
+}
+main .app .padding .right.short {
+  width: fit-content;
+}
+main .app .padding .balance {
+  width: 70%;
+  padding: 10px 20px 10px 30px;
+  margin-bottom: 10px;
+  background-image: linear-gradient(
+    to right,
+    hsl(293, 100%, 63%),
+    hsl(264, 100%, 61%)
+  );
+  border-radius: 12px 12px 12px 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+main .app .padding .balance::before {
+  content: "\f111";
+  font-family: "Font Awesome 5 Free";
+  font-size: 14px;
+  color: hsl(289, 100%, 72%);
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+main .app .padding .balance .time {
+  font-size: 10px;
+  color: hsl(289, 100%, 72%);
+}
+main .app .padding .balance .cost {
+  font-size: 12px;
+  font-weight: 600;
+  color: hsl(0, 0%, 100%);
+}
+main .app .padding form {
+  position: relative;
+}
+main .app .padding form::before {
+  content: "\f054";
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  font-size: 12px;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(271, 36%, 24%);
+  padding: 5px 7px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+}
+main .app .padding .input {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+}
+main .app .padding .input::placeholder {
+  font-size: 10px;
+  color: hsl(206, 6%, 79%);
+}
+main .info {
+  width: 450px;
+}
+main .info h1 {
+  margin-bottom: 30px;
+  font-family: "Rubik", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: hsl(271, 36%, 24%);
+}
+main .info p {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  color: hsl(270, 7%, 64%);
+  line-height: 1.5;
+}
+@media (max-width: 450px) {
+  main {
+    flex-direction: column;
+  }
+  main .info {
+    text-align: center;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  main .info p {
+    font-size: 14px;
+  }
+}
